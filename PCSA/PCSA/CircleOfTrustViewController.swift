@@ -146,7 +146,7 @@ class CircleOfTrustViewController: MainViewController {
         contactStroe.requestAccess(for: .contacts, completionHandler: { (granted, error) -> Void in
             if granted {
                 
-                DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async { // 1
+                DispatchQueue.global().async {
                     
                     //retrieve images in background
                     let predicate = CNContact.predicateForContactsInContainer(withIdentifier: contactStroe.defaultContainerIdentifier())
